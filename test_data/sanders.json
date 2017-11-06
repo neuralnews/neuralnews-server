@@ -1,0 +1,50 @@
+[
+        {"article":
+                {"data":
+                        [
+                                {
+                                        "ent":"Convention",
+                                        "count":5,"polarity":-0.030168650793650786
+                                },
+                                {
+                                        "ent":"Detroit",
+                                        "count":2,"polarity":0.09375
+                                },
+                                {
+                                        "ent":"Bernie Sanders",
+                                        "count":5,"polarity":-0.015079365079365076
+                                }
+                        ],
+                "title":"Bernie Sanders cancels appearance at historic Women's Convention: What they're saying",
+                "description" : "Bernie Sanders tweeted this morning apologizing in advance for not being able to make it to the convention...",
+                "source":"Syracuse Post-Standard", 
+                "url" : "http://www.syracuse.com/opinion/index.ssf/2017/10/bernie_sanders_cancels_appearance_at_historic_womens_convention_what_theyre_sayi.html"}},
+        {"article":
+                {"data":
+                        [
+                                {"ent":"Senate",
+                                "count":1,"polarity":-0.6},
+                                {"ent":"Bernie Sanders",
+                                "count":1,"polarity":-0.6},
+                                {"count":0,"polarity":0}
+                        ],
+                "title":"Bernie Sanders Running as an Independent in 2018",
+                "description" : "Here's another description! This one maps to the MSN article...",
+                "source":"MSN", 
+                "url" : "https://www.msn.com/en-us/money/us/bernie-sanders-running-as-an-independent-in-2018/vp-AAtX7Fz"}},
+        {"article":
+                {"data":
+                        [
+                                {"ent":"White House","count":7,"polarity":-0.0030692554799697657},
+                                {"ent":"POLITICO.","count":1,"polarity":0},
+                                {"ent":"Sarah Huckabee Sanders","count":2,"polarity":0.008333333333333331}],
+                "title":"Sanders: White House wants to be on-the-record more, rips anonymous sourcing",
+                "source":"Politico",
+                "description" : "Some description for the POLITICO article...", 
+                "url" : "http://www.politico.com/story/2017/10/23/sanders-anonymous-sources-white-house-244093"}
+        }
+]
+
+
+
+

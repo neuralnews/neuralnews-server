@@ -1,0 +1,78 @@
+[  
+   {  
+      "article":{  
+         "data":[  
+            {  
+               "ent":"DNC",
+               "count":1,
+               "polarity":-0.125
+            },
+            {  
+               "ent":"Clinton",
+               "count":1,
+               "polarity":-0.125
+            },
+            {  
+               "count":0,
+               "polarity":0
+            }
+         ],
+         "title":"Byron York: After Trump Dossier Revelation, FBI Is Next",
+         "description":"Investigators looking into the so-called \"Trump dossier\" were not surprised when news broke Tuesday night that the Hillary Clinton campaign and the DNC, working through the Democrats' law firm, Perkins Coie, financed the \"salacious and unverified ...",
+         "source":"Fox Nation",
+         "url":"http://nation.foxnews.com/2017/10/25/byron-york-after-trump-dossier-revelation-fbi-next",
+         "thumbnail":"https://www.bing.com/th?id=ON.266D70CB082B9696A1BC362456A700E7&pid=News"
+      }
+   },
+   {  
+      "article":{  
+         "data":[  
+            {  
+               "ent":"Interior",
+               "count":2,
+               "polarity":0
+            },
+            {  
+               "ent":"Alaska",
+               "count":6,
+               "polarity":-0.0014050925925891665
+            },
+            {  
+               "ent":"Donald Trump",
+               "count":1,
+               "polarity":0.183333333333
+            }
+         ],
+         "title":"President Trump Wanted to Rename a Mountain. Alaska Was Not Happy About It",
+         "description":"(JUNEAU, Alaska) — One Obama administration action may be safe under President Donald Trump — the long-sought renaming of North America's tallest peak to Denali. U.S. Sen. Dan Sullivan said the Alaska mountain came up during an hourlong meeting he and ...",
+         "source":"Time",
+         "url":"http://time.com/4997447/donald-trump-denali-mount-mckinley/",
+         "thumbnail":"https://www.bing.com/th?id=ON.88008482BAA3C2713B4B1ABBF7C0BBFD&pid=News"
+      }
+   },
+   {  
+      "article":{  
+         "data":[  
+            {  
+               "ent":"Democratic National Committee",
+               "count":2,
+               "polarity":-0.01666666666665
+            },
+            {  
+               "ent":"Hillary Clinton",
+               "count":2,
+               "polarity":-0.01666666666665
+            },
+            {  
+               "count":0,
+               "polarity":0
+            }
+         ],
+         "title":"Hillary Clinton learned of Trump dossier after BuzzFeed posted it",
+         "description":"Hillary Clinton only learned about the now-infamous \"Trump dossier\" after BuzzFeed News posted it, despite the fact that the Clinton campaign and the Democratic National Committee helped fund it, a source confirmed to CBS News. A former British spy ...",
+         "source":"CBS News",
+         "url":"https://www.cbsnews.com/news/hillary-clinton-learned-of-trump-dossier-after-buzzfeed-posted-it/",
+         "thumbnail":"https://www.bing.com/th?id=ON.F6814890A6BEA0D3391DB6E62157C2D0&pid=News"
+      }
+   }
+]

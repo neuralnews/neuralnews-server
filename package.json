@@ -1,0 +1,27 @@
+{
+  "name": "NNServer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Server for NeuralNews",
+  "main": "server.js",
+  "dependencies": {
+    "aylien_textapi": "^0.6.0",
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "node-fetch": "^1.7.3",
+    "python-shell": "^0.4.0",
+    "q": "^1.5.1",
+    "request": "^2.81.0",
+    "utf8": "^2.1.2",
+    "validator": "^7.0.0"
+  },
+  "engines": {
+    "node": "latest"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Brendan Voelz & Charles Winston",
+  "license": "ISC"
+}
