@@ -157,7 +157,7 @@ function new_process_articles(articles, startDate)
                                                 }
                                         }
                                 });*/
-                                data_obj = process_nlp_data(JSON.parse(stdout_3), startDate, response.title, articles[0].description, articles[0].image ? articles[0].image.thumbnail.contentUrl : 'null', articles[0].url, articles[0].provider[0].name)
+                                data_obj = process_nlp_data(JSON.parse(stdout_1), startDate, response.title, articles[0].description, articles[0].image ? articles[0].image.thumbnail.contentUrl : 'null', articles[0].url, articles[0].provider[0].name)
                                 result.push({
                                         "article" : data_obj
                                 });
@@ -234,7 +234,7 @@ function new_process_articles(articles, startDate)
                                                 }
                                         }
                                 });*/
-                                data_obj = process_nlp_data(JSON.parse(stdout_3), startDate, response.title, articles[1].description, articles[1].image ? articles[1].image.thumbnail.contentUrl : 'null', articles[1].url, articles[1].provider[0].name)
+                                data_obj = process_nlp_data(JSON.parse(stdout_2), startDate, response.title, articles[1].description, articles[1].image ? articles[1].image.thumbnail.contentUrl : 'null', articles[1].url, articles[1].provider[0].name)
                                 result.push({
                                         "article" : data_obj
                                 });
