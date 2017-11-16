@@ -34,6 +34,11 @@ app.get('/trump.json', function(req, res) {
         res.sendFile(__dirname + '/test_data/trump.json');
 });
 
+/* Serve trending topics */
+app.get('/trendingtopics', function(req, res) {
+        res.sendFile(__dirname + '/trendingtopics.json');
+});
+
 /* Trying out things from scratch... */
 app.get('/query', function(req, res) {
 
@@ -391,14 +396,17 @@ function getEntities(response)
         // TODO: Make this work a little better...
         var ents = [];
         if (response.organization)
-                if (response.organization[0])
-                        ents.push(response.organization[0])
+                ents.push(response.organization[0]);
+        else
+                ents.push(response.keyword[0]);
         if (response.location)
-                if (response.location[0])
-                        ents.push(response.location[0]);
+                ents.push(response.location[0]);
+        else
+                ents.push(response.keyword[1]);
         if (response.person)
-                if (response.person[0])
-                        ents.push(response.person[0]);
+                ents.push(response.person[0]);
+        else
+                ents.push(response.keyword[2]);
         return ents;
 }
 

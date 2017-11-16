@@ -1,0 +1,11 @@
+{
+  "license":"CC BY-NC 3.0",
+  "spacy_version":">=1.7.0,<2.0.0",
+  "version":"0.0.0",
+  "description":"Neural News language model",
+  "url":"",
+  "name":"nn_model",
+  "author":"Charles Winston, Brendan Voelz",
+  "email":"charles.winston@tufts.edu",
+  "lang":"en"
+}
