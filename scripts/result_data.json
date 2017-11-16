@@ -1,0 +1,16 @@
+{
+        "entities" : [
+                {
+                        "entity" : "SOME_NAME",
+                        "polarity" : "SOME_VALUE"
+                },
+                {
+                        "entity" : "SOME_NAME",
+                        "polarity" : "SOME_VALUE"
+                },
+                {
+                        "entity" : "SOME_NAME",
+                        "polarity" : "SOME_VALUE"
+                }
+        ]
+}
