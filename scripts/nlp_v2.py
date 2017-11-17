@@ -73,7 +73,7 @@ def analysis(text):
         #print(u'{:<16}: {}'.format('wikipedia_url', entity.metadata.get('wikipedia_url', '-')))
         raw_ents.append(current_ent)
 
-    final_result.append({'raw_ents': raw_ents})
+    final_result.append(raw_ents)
 
     print(json.dumps(final_result))
     sys.stdout.flush()
