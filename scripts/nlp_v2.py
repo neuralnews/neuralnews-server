@@ -48,6 +48,33 @@ def analysis(text):
         current_ent['sentiment'] = entity.sentiment.score
         final_result.append(current_ent)
 
+    # Detects entities in the document. You can also analyze HTML with:
+    #   document.type == enums.Document.Type.HTML
+    entities = client.analyze_entities(document).entities
+
+    # entity types from enums.Entity.Type
+    entity_type = ('UNKNOWN', 'PERSON', 'LOCATION', 'ORGANIZATION',
+                   'EVENT', 'WORK_OF_ART', 'CONSUMER_GOOD', 'OTHER')
+
+    raw_ents = []
+    for entity in entities:
+        current_ent = {
+            'name'          :   entity.name,
+            'type'          :   entity.type,
+            'metadata'      :   entity.metadata,
+            'salience'      :   entity.salience,
+            'wikipedia_url' :   entity.metadata.get('wikipedia_url', '-'),
+        }
+        #print('=' * 20)
+        #print(u'{:<16}: {}'.format('name', entity.name))
+        #print(u'{:<16}: {}'.format('type', entity_type[entity.type]))
+        #print(u'{:<16}: {}'.format('metadata', entity.metadata))
+        #print(u'{:<16}: {}'.format('salience', entity.salience))
+        #print(u'{:<16}: {}'.format('wikipedia_url', entity.metadata.get('wikipedia_url', '-')))
+        raw_ents.append(current_ent)
+
+    final_result.append({'raw_ents': raw_ents})
+
     print(json.dumps(final_result))
     sys.stdout.flush()
 
