@@ -78,7 +78,6 @@ app.get('/query', function(req, res) {
             });
             response.on('end', function () {
                 articles = JSON.parse(body).value;
-                //res.send(JSON.stringify(articles));
                 new_process_articles(articles, startDate).then(function(data) {
                         res.send(JSON.stringify(data));
                 });
@@ -150,35 +149,14 @@ function new_process_articles(articles, startDate)
                         });
 
                         scriptExecution.stdout.on('end', () => {
-                            // 2b. Extract entities
-                                /*textapi.entities({
-                                        "text" : article_text
-                                }, function(error, __response) {
-                                        if (error) {
-                                                console.log("ERROR: Extracting entities");
-                                        } else {
-                                                console.log("* * * * Entities extracted successfully");
-                                                console.log("Time to extract entities: " + ((Date.now() - startDate) / 1000).toString() + " seconds\n");
-
-                                                // 5. Do something with all of this data...
-                                                data_obj = process_nlp_data(JSON.parse(stdout_1), __response.entities, startDate, response.title, articles[0].description, articles[0].image ? articles[0].image.thumbnail.contentUrl : 'null', articles[0].url, articles[0].provider[0].name);
-                                                result.push({
-                                                        "article" : data_obj
-                                                });
-                                                console.log("PUSHED SUCCESSFULLY, SIZE OF RESULTS: " + result.length.toString());
-                                                if (result.length == 3) {
-                                                        deferred.resolve(result);
-                                                }
-                                        }
-                                });*/
-                                data_obj = process_nlp_data(JSON.parse(stdout_1), startDate, response.title, articles[0].description, articles[0].image ? articles[0].image.thumbnail.contentUrl : 'null', articles[0].url, articles[0].provider[0].name)
-                                result.push({
-                                        "article" : data_obj
-                                });
-                                console.log("PUSHED SUCCESSFULLY, SIZE OF RESULTS: " + result.length.toString());
-                                if (result.length == 3) {
-                                        deferred.resolve(result);
-                                }
+                            data_obj = process_nlp_data(JSON.parse(stdout_1), startDate, response.title, articles[0].description, articles[0].image ? articles[0].image.thumbnail.contentUrl : 'null', articles[0].url, articles[0].provider[0].name)
+                            result.push({
+                                    "article" : data_obj
+                            });
+                            console.log("PUSHED SUCCESSFULLY, SIZE OF RESULTS: " + result.length.toString());
+                            if (result.length == 5) {
+                                    deferred.resolve(result);
+                            }
                         });
 
                         // Handle error output
@@ -226,36 +204,14 @@ function new_process_articles(articles, startDate)
 
                         scriptExecution.stdout.on('end', () => {
                             console.log("*** ==> Python script executed successfully!");
-                            // 2b. Extract entities
-                            /*
-                                textapi.entities({
-                                        "text" : article_text
-                                }, function(error, __response) {
-                                        if (error) {
-                                                console.log("ERROR: Extracting entities");
-                                        } else {
-                                                console.log("* * * * Entities extracted successfully");
-                                                console.log("Time to extract entities: " + ((Date.now() - startDate) / 1000).toString() + " seconds\n");
-
-                                                // 5. Do something with all of this data...
-                                                data_obj = process_nlp_data(JSON.parse(stdout_2), __response.entities, startDate, response.title, articles[1].description, articles[1].image ? articles[1].image.thumbnail.contentUrl : 'null', articles[1].url, articles[1].provider[0].name);
-                                                result.push({
-                                                        "article" : data_obj
-                                                });
-                                                console.log("PUSHED SUCCESSFULLY, SIZE OF RESULTS: " + result.length.toString());
-                                                if (result.length == 3) {
-                                                        deferred.resolve(result);
-                                                }
-                                        }
-                                });*/
-                                data_obj = process_nlp_data(JSON.parse(stdout_2), startDate, response.title, articles[1].description, articles[1].image ? articles[1].image.thumbnail.contentUrl : 'null', articles[1].url, articles[1].provider[0].name)
-                                result.push({
-                                        "article" : data_obj
-                                });
-                                console.log("PUSHED SUCCESSFULLY, SIZE OF RESULTS: " + result.length.toString());
-                                if (result.length == 3) {
-                                        deferred.resolve(result);
-                                }
+                            data_obj = process_nlp_data(JSON.parse(stdout_2), startDate, response.title, articles[1].description, articles[1].image ? articles[1].image.thumbnail.contentUrl : 'null', articles[1].url, articles[1].provider[0].name)
+                            result.push({
+                                    "article" : data_obj
+                            });
+                            console.log("PUSHED SUCCESSFULLY, SIZE OF RESULTS: " + result.length.toString());
+                            if (result.length == 5) {
+                                    deferred.resolve(result);
+                            }
                         });
 
                         // Handle error output
@@ -308,36 +264,124 @@ function new_process_articles(articles, startDate)
                         });
 
                         scriptExecution.stdout.on('end', () => {
-                            // 2b. Extract entities
-                            /*
-                                textapi.entities({
-                                        "text" : article_text
-                                }, function(error, __response) {
-                                        if (error) {
-                                                console.log("ERROR: Extracting entities");
-                                        } else {
-                                                console.log("* * * * Entities extracted successfully");
-                                                console.log("Time to extract entities: " + ((Date.now() - startDate) / 1000).toString() + " seconds\n");
+                            data_obj = process_nlp_data(JSON.parse(stdout_3), startDate, response.title, articles[2].description, articles[2].image ? articles[2].image.thumbnail.contentUrl : 'null', articles[2].url, articles[2].provider[0].name)
+                            result.push({
+                                    "article" : data_obj
+                            });
+                            console.log("PUSHED SUCCESSFULLY, SIZE OF RESULTS: " + result.length.toString());
+                            if (result.length == 5) {
+                                    deferred.resolve(result);
+                            }
+                        })
+                }
+        });
 
-                                                // 5. Do something with all of this data...
-                                                data_obj = process_nlp_data(JSON.parse(stdout_3), __response.entities, startDate, response.title, articles[2].description, articles[2].image ? articles[2].image.thumbnail.contentUrl : 'null', articles[2].url, articles[2].provider[0].name);
-                                                result.push({
-                                                        "article" : data_obj
-                                                });
-                                                console.log("PUSHED SUCCESSFULLY, SIZE OF RESULTS: " + result.length.toString());
-                                                if (result.length == 3) {
-                                                        deferred.resolve(result);
-                                                }
-                                        }
-                                }); */
-                                data_obj = process_nlp_data(JSON.parse(stdout_3), startDate, response.title, articles[2].description, articles[2].image ? articles[2].image.thumbnail.contentUrl : 'null', articles[2].url, articles[2].provider[0].name)
-                                result.push({
-                                        "article" : data_obj
-                                });
-                                console.log("PUSHED SUCCESSFULLY, SIZE OF RESULTS: " + result.length.toString());
-                                if (result.length == 3) {
-                                        deferred.resolve(result);
-                                }
+        textapi.extract({
+                url: articles[3].url,
+                best_image: true
+        }, function(error, response) {
+                if (error) {
+                        console.log("LOG: ERROR: " + JSON.stringify(error));
+                        console.log("==> Result: " + JSON.stringify(response));
+                } else {
+                        console.log("* * Extracted text successfully");
+                        console.log("Time to extract article text: " + ((Date.now() - startDate) / 1000).toString() + " seconds\n");
+
+                        // 2a. TODO: sanitize text (remove quotes, etc.)
+                        var article_text  = response.article;
+
+                        // The path to your python script
+                        var myPythonScript = "./scripts/nlp_v2.py";
+
+                        // Provide the path of the python executable, if python is available as environment variable then you can use only "python"
+                        var pythonExecutable = "python";
+
+                        // Function to convert an Uint8Array to a string
+                        var uint8arrayToString = function(data){
+                            return String.fromCharCode.apply(null, data);
+                        };
+
+                        // Spawn child process
+                        const spawn           = require("child_process").spawn;
+                        const scriptExecution = spawn(pythonExecutable, [myPythonScript, article_text.replace(/[^\w.]+/g, " ")]);
+                        scriptExecution.stdout.setEncoding('utf8');
+
+                        stdout_4 = ''
+
+                        // Handle normal output
+                        scriptExecution.stdout.on('data', (data) => {
+                                stdout_4 += data;
+                        });
+
+                        // Handle error output
+                        scriptExecution.stderr.on('data', (data) => {
+                            console.log("ERROR: " + uint8arrayToString(data));
+                        });
+
+                        scriptExecution.stdout.on('end', () => {
+                            data_obj = process_nlp_data(JSON.parse(stdout_4), startDate, response.title, articles[3].description, articles[3].image ? articles[3].image.thumbnail.contentUrl : 'null', articles[3].url, articles[3].provider[0].name)
+                            result.push({
+                                    "article" : data_obj
+                            });
+                            console.log("PUSHED SUCCESSFULLY, SIZE OF RESULTS: " + result.length.toString());
+                            if (result.length == 5) {
+                                    deferred.resolve(result);
+                            }
+                        })
+                }
+        });
+
+        textapi.extract({
+                url: articles[4].url,
+                best_image: true
+        }, function(error, response) {
+                if (error) {
+                        console.log("LOG: ERROR: " + JSON.stringify(error));
+                        console.log("==> Result: " + JSON.stringify(response));
+                } else {
+                        console.log("* * Extracted text successfully");
+                        console.log("Time to extract article text: " + ((Date.now() - startDate) / 1000).toString() + " seconds\n");
+
+                        // 2a. TODO: sanitize text (remove quotes, etc.)
+                        var article_text  = response.article;
+
+                        // The path to your python script
+                        var myPythonScript = "./scripts/nlp_v2.py";
+
+                        // Provide the path of the python executable, if python is available as environment variable then you can use only "python"
+                        var pythonExecutable = "python";
+
+                        // Function to convert an Uint8Array to a string
+                        var uint8arrayToString = function(data){
+                            return String.fromCharCode.apply(null, data);
+                        };
+
+                        // Spawn child process
+                        const spawn           = require("child_process").spawn;
+                        const scriptExecution = spawn(pythonExecutable, [myPythonScript, article_text.replace(/[^\w.]+/g, " ")]);
+                        scriptExecution.stdout.setEncoding('utf8');
+
+                        stdout_5 = ''
+
+                        // Handle normal output
+                        scriptExecution.stdout.on('data', (data) => {
+                                stdout_5 += data;
+                        });
+
+                        // Handle error output
+                        scriptExecution.stderr.on('data', (data) => {
+                            console.log("ERROR: " + uint8arrayToString(data));
+                        });
+
+                        scriptExecution.stdout.on('end', () => {
+                            data_obj = process_nlp_data(JSON.parse(stdout_5), startDate, response.title, articles[4].description, articles[4].image ? articles[4].image.thumbnail.contentUrl : 'null', articles[4].url, articles[4].provider[0].name)
+                            result.push({
+                                    "article" : data_obj
+                            });
+                            console.log("PUSHED SUCCESSFULLY, SIZE OF RESULTS: " + result.length.toString());
+                            if (result.length == 5) {
+                                    deferred.resolve(result);
+                            }
                         })
                 }
         });
@@ -370,6 +414,8 @@ function process_nlp_data(entities, startDate, article_title, description, thumb
                     ents[0],
                     ents[1],
                     ents[2],
+                    ents[3],
+                    ents[4],
                 ],
                 title       : article_title,
                 description : description,
@@ -377,15 +423,6 @@ function process_nlp_data(entities, startDate, article_title, description, thumb
                 url         : url,
                 thumbnail   : thumbnail
         };
-/*
-        for (var i = 0; i < ents.length; i++) {
-                for (var j = 0; j < sentences.length; j++) {
-                        if (sentences[j].text.indexOf(ents[i]) != -1) {
-                                result.data[i].count++;
-                                result.data[i].polarity = (result.data[i].polarity + parseFloat(sentences[j].polarity)) / result.data[i].count;
-                        }
-                }
-        }*/
         console.log("* * * * * Text processed => printing results...")
         console.log(result);
         console.log("Time to iterate over sentences looking for entities: " + ((Date.now() - startDate) / 1000).toString() + " seconds\n");
