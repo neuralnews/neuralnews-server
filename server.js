@@ -17,9 +17,9 @@ var utf8          = require('utf8');
 var Q             = require('q');
 
 var bigtable      = require('@google-cloud/bigtable')({ projectId: 'neural-news-185122' });
-
+/*
 var instance = bigtable.instance('my-instance');
-var table = instance.table('prezzy');
+var table = instance.table('prezzy');*/
 
 /* Setting app properties */
 app.use(bodyParser.json());
@@ -37,6 +37,14 @@ app.get('/sanders.json', function(req, res) {
 });
 app.get('/trump.json', function(req, res) {
         res.sendFile(__dirname + '/test_data/trump.json');
+});
+app.get('/trump_raw.json', function(req, res) {
+        //res.sendFile(__dirname + '/test_data/trump_raw.json');
+        var articles = require('./test_data/trump_raw.json');
+        var startDate = Date.now();
+        new_process_articles(articles, startDate).then(function(data) {
+          res.send(JSON.stringify(data));
+        });
 });
 
 /* Serve trending topics */
@@ -70,10 +78,10 @@ app.get('/query', function(req, res) {
             });
             response.on('end', function () {
                 articles = JSON.parse(body).value;
-                res.send(JSON.stringify(articles));
-                /*new_process_articles(articles, startDate).then(function(data) {
+                //res.send(JSON.stringify(articles));
+                new_process_articles(articles, startDate).then(function(data) {
                         res.send(JSON.stringify(data));
-                });*/
+                });
             });
             response.on('error', function (e) {
                 console.log('Error: ' + e.message);
