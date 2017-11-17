@@ -16,6 +16,11 @@ var PythonShell   = require('python-shell');
 var utf8          = require('utf8');
 var Q             = require('q');
 
+var bigtable      = require('@google-cloud/bigtable')({ projectId: 'neural-news-185122' });
+
+var instance = bigtable.instance('my-instance');
+var table = instance.table('prezzy');
+
 /* Setting app properties */
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -65,9 +70,10 @@ app.get('/query', function(req, res) {
             });
             response.on('end', function () {
                 articles = JSON.parse(body).value;
-                new_process_articles(articles, startDate).then(function(data) {
+                res.send(JSON.stringify(articles));
+                /*new_process_articles(articles, startDate).then(function(data) {
                         res.send(JSON.stringify(data));
-                });
+                });*/
             });
             response.on('error', function (e) {
                 console.log('Error: ' + e.message);
