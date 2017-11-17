@@ -56,7 +56,7 @@ def analysis(text):
     entity_type = ('UNKNOWN', 'PERSON', 'LOCATION', 'ORGANIZATION',
                    'EVENT', 'WORK_OF_ART', 'CONSUMER_GOOD', 'OTHER')
 
-    raw_ents = []
+    #raw_ents = []
     for entity in entities:
         current_ent = {
             'name'          :   entity.name,
@@ -71,9 +71,9 @@ def analysis(text):
         #print(u'{:<16}: {}'.format('metadata', entity.metadata))
         #print(u'{:<16}: {}'.format('salience', entity.salience))
         #print(u'{:<16}: {}'.format('wikipedia_url', entity.metadata.get('wikipedia_url', '-')))
-        raw_ents.append(current_ent)
 
-    final_result.append(raw_ents)
+        #raw_ents.append(current_ent)
+        final_result.append(raw_ents)
 
     print(json.dumps(final_result))
     sys.stdout.flush()
