@@ -21,7 +21,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "restart" : "node server.js"
   },
   "author": "Brendan Voelz & Charles Winston",
   "license": "ISC"
