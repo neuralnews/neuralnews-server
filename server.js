@@ -16,7 +16,7 @@ var PythonShell   = require('python-shell');
 var utf8          = require('utf8');
 var Q             = require('q');
 
-var bigtable      = require('@google-cloud/bigtable')({ projectId: 'neural-news-185122' });
+//var bigtable      = require('@google-cloud/bigtable')({ projectId: 'neural-news-186322' });
 /*
 var instance = bigtable.instance('my-instance');
 var table = instance.table('prezzy');*/
