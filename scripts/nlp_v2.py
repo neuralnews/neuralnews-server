@@ -1,15 +1,17 @@
 # -*- coding: utf-8 -*-
 # neural_news
-#from textblob import TextBlob
 import json
 import sys
 sys.path.insert(0, 'lib')
+print('DONE1')
+from google.appengine.ext import vendor
+# Add any libraries install in the "lib" folder.
+vendor.add('lib')
+print('DONE2')
 import logging
 
 # Imports the Google Cloud client library
-from google.cloud import language
-from google.cloud.language import enums
-from google.cloud.language import types
+from google.cloud.language import LanguageServiceClient, enums, types
 
 def analysis(text):
     # Instantiates a client
