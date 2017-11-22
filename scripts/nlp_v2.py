@@ -3,7 +3,7 @@
 #from textblob import TextBlob
 import json
 import sys
-sys.path.insert(0, 'libs')
+sys.path.insert(0, 'lib')
 import logging
 
 # Imports the Google Cloud client library
