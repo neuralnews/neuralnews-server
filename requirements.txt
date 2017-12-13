@@ -2,3 +2,5 @@ Flask==0.12.2
 werkzeug==0.12.2
 aylien-apiclient
 google-api-python-client
+google-cloud-bigquery
+requests-toolbelt
