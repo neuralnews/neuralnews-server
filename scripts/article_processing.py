@@ -3,23 +3,29 @@
 # Methods to process article data
 
 import logging
-from entity_analysis import analyzeEntitySentiment
+from entity_analysis import getEntities
 from google.appengine.api import urlfetch
+from aylienapiclient import textapi
+
+aylienClient = textapi.Client('a5ad45d9', '2c891b3f58381a7842d500c5fb534b8e')
 
 # Extract text from article urls
-def processArticles(articles, startDate, aylienClient):
+def processArticles(articles):
     results = []
     for article in articles[:5]:
         # Get title and text from article
         title, text, fullText = extractText(article['url'], aylienClient)
 
         # Perform entity analysis on text and title
-        entities = analyzeEntitySentiment(fullText, startDate)
+        entities = getEntities(fullText)
 
-        # Get formatted JSON object for article
-        articleObject = formatArticleJSON(title, article, entities)
+        # If article didn't get at least 3 entities, don't include
+        if len(entities) >= 3:
+            # Get formatted JSON object for article
+            articleObject = formatArticleJSON(title, article, entities)
 
-        results.append(articleObject)
+            # Append article object to results
+            results.append(articleObject)
 
     return results
 
@@ -41,7 +47,7 @@ def extractText(url, aylienClient):
 def formatArticleJSON(title, article, entities):
     articleObject = {
         'article': {
-            'data': entities[:5] if len(entities) >= 5 else entities,
+            'data': entities[:3],
             'title': title,
             'description': article['description'],
             'thumbnail': article['image']['thumbnail']['contentUrl'] if 'image' in article else 'null',

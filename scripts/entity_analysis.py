@@ -4,14 +4,13 @@
 
 from apiclient import discovery
 
-def analyzeEntitySentiment(text, startDate):
+# Gets entity sentiment by calling Google Natural Language API, then filtering valid entities
+def getEntities(text):
     # Make API call to Google to analyze entity sentiment
     entities = googleEntitySentiment(text)
 
     # Filter valid entities, ones with a wikipedia page
     entities = filterValidEntities(entities)
-
-    print(entities)
 
     return entities
 
