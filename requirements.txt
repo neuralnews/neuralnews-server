@@ -1,2 +1,4 @@
-google-cloud==0.29.0
+Flask==0.12.2
+werkzeug==0.12.2
+aylien-apiclient
 google-api-python-client

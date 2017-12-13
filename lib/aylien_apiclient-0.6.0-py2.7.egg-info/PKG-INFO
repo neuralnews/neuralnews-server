@@ -1,0 +1,54 @@
+Metadata-Version: 1.1
+Name: aylien-apiclient
+Version: 0.6.0
+Summary: AYLIEN Text API Client Library for Python
+Home-page: https://github.com/AYLIEN/aylien_textapi_python
+Author: Aylien, Inc.
+Author-email: UNKNOWN
+License: Apache 2.0
+Description-Content-Type: UNKNOWN
+Description: About
+        =====
+        This is the Python client library for AYLIEN's APIs. If you haven't already done so, you will need to `sign up`_.
+        
+        Installation
+        ============
+        To install, simply use ``pip``:
+        
+        .. code-block:: bash
+        
+          $ pip install --upgrade aylien-apiclient
+        
+        See the `Developers Guide`_ for additional documentation.
+        
+        Example
+        =======
+        .. code-block:: python
+        
+          from aylienapiclient import textapi
+          c = textapi.Client("YourApplicationID", "YourApplicationKey")
+          s = c.Sentiment({'text': 'John is a very good football player!'})
+          
+        Third Party Libraries and Dependencies
+        ======================================
+        The following libraries will be installed when you install the client library:
+        
+        - httplib2
+        
+        For development you will also need the following libraries:
+        
+        - httpretty
+        - unittest2
+        - nose
+        
+        .. _documentation: http://httpd.apache.org
+        .. _sign up: https://developer.aylien.com/signup
+        .. _Developers Guide: https://developer.aylien.com/docs
+        
+Keywords: aylien text api client
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX
+Classifier: Topic :: Internet :: WWW/HTTP

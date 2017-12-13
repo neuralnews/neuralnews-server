@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+aylien_apiclient.egg-info/PKG-INFO
+aylien_apiclient.egg-info/SOURCES.txt
+aylien_apiclient.egg-info/dependency_links.txt
+aylien_apiclient.egg-info/requires.txt
+aylien_apiclient.egg-info/top_level.txt
+aylienapiclient/__init__.py
+aylienapiclient/errors.py
+aylienapiclient/http.py
+aylienapiclient/textapi.py

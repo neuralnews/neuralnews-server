@@ -1,0 +1,13 @@
+../aylienapiclient/__init__.py
+../aylienapiclient/errors.py
+../aylienapiclient/http.py
+../aylienapiclient/textapi.py
+../aylienapiclient/__init__.pyc
+../aylienapiclient/errors.pyc
+../aylienapiclient/http.pyc
+../aylienapiclient/textapi.pyc
+dependency_links.txt
+PKG-INFO
+requires.txt
+SOURCES.txt
+top_level.txt
