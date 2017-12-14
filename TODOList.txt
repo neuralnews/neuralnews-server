@@ -1,0 +1,5 @@
+TODOList.txt
+
+1. Sort articles
+2. Catch before timeout of aylien text API
+3. Automatic calls to server to precache things before people even search them

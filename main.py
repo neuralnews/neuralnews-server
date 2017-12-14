@@ -20,9 +20,11 @@ def trendingtopics():
 @app.route('/hometopics')
 def hometopics():
     # Read trending topics from JSON file
-    return json.dumps(json.loads(app.open_resource('hometopics.json').read()))
+    return app.open_resource('hometopics.json').read()
 
-
+@app.route('/hometopicssearch')
+def hometopicssearch():
+    # Read trending topics from JSON file
     topics = app.open_resource('trendingtopics.json').read()
     topics = json.loads(topics)
 
@@ -34,17 +36,20 @@ def hometopics():
         articles = responseObject['value']
 
         # Process article data
-        processedArticles = processArticles(articles)
+        processedArticles = processArticles(articles, topic)
 
         # Define JSON object for topic and append to result
-        topicObject = {
+        '''topicObject = {
             'topic': topic,
             'articles': processedArticles
-        }
-        results.append(topicObject)
+        }'''
+        processedArticles['topic'] = topic
 
-    return json.dumps(results)
+        results.append(processedArticles)
 
+    resJSON = json.dumps(results)
+    #open('hometopics.json', 'wb').write(resJSON)
+    return resJSON
 
 @app.route('/query/')
 @app.route('/query/<query>')
@@ -54,7 +59,7 @@ def query(query=None):
     articles = responseObject['value']
 
     # Process article data
-    processedArticles = processArticles(articles)
+    processedArticles = processArticles(articles, query)
 
     return json.dumps(processedArticles)
 
