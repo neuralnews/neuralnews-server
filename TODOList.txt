@@ -1,4 +1,4 @@
 TODOList.txt
 
 1. Automatic calls to server to precache things before people even search them
-2. ...
+2. Make JSON files with twitter accounts and news sources categorized by political alignment

@@ -1,0 +1,122 @@
+{
+  "farRight": [
+    {
+      "title": "Breibart",
+      "link": "https://www.breitbart.com/"
+    },
+    {
+      "title": "Daily Wire",
+      "link": "https://www.dailywire.com/"
+    },
+    {
+      "title": "The Blaze",
+      "link": "http://www.theblaze.com/"
+    },
+  ],
+  "farLeft": [
+    {
+      "title": "Campaign for America's Future",
+      "link": "https://ourfuture.org/",
+    },
+    {
+      "title": "Firedoglake",
+      "link": "https://shadowproof.com/"
+    },
+    {
+      "title": "Mother Jones",
+      "link": "https://www.motherjones.com/"
+    },
+    {
+      "title": "Nation",
+      "link": "https://www.thenation.com/"
+    },
+    {
+      "title": "ThinkProgress",
+      "link": "https://thinkprogress.org/"
+    },
+    {
+      "title": "Progressive",
+      "link": "https://progressive.org/"
+    },
+    {
+      "title": "Rolling Stone",
+      "link": "https://www.rollingstone.com"
+    },
+    {
+      "title": "American Prospect",
+      "link": "http://www.prospect.org/"
+    },
+    {
+      "title": "Salon ",
+      "link": "https://www.salon.com/"
+    },
+    {
+      "title": "Msnbc",
+      "link": "https://www.msnbc.com/"
+    },
+    {
+      "title": "Media Matters",
+      "link": "https://www.mediamatters.org/"
+    },
+    {
+      "title": "New Republic",
+      "link": "https://newrepublic.com/"
+    },
+    {
+      "title": "BusinessInsider",
+      "link": "https://www.businessinsider.com/"
+    },
+    {
+      "title": "Huffington Post",
+      "link": "https://www.huffingtonpost.com/"
+    },
+    {
+      "title": "Daily Beast",
+      "link": "https://www.thedailybeast.com/"
+    },
+    {
+      "title": "BuzzFeed",
+      "link": "https://www.buzzfeed.com/"
+    }
+  ],
+  "mainstreamRight": [
+
+  ],
+  "mainstreamLeft": [
+    {
+      "title": "National Journal",
+      "link": "https://www.nationaljournal.com/"
+    },
+    {
+      "title": "Mediate",
+      "link": "https://www.mediaite.com/"
+    },
+    {
+      "title": "Talking Points Memo",
+      "link": "http://talkingpointsmemo.com/"
+    },
+    {
+      "title": "The Guardian",
+      "link": "https://www.theguardian.com/"
+    },
+    {
+      "title": "The New York Times",
+      "link": "https://www.nytimes.com/"
+    },
+    {
+      "title": "The Week",
+      "link": "http://theweek.com/"
+    },
+
+  ],
+  "center": [
+    {
+      "title": "Associated Press",
+      "link": "https://www.ap.org/en-us/"
+    },
+    {
+      "title": "Bloomberg",
+      "link": "https://www.bloomberg.com/"
+    },
+  ]
+}
