@@ -12,6 +12,11 @@
       "title": "The Blaze",
       "link": "http://www.theblaze.com/"
     },
+    {
+      "title": "Heat Street",
+      "link": "http://www.heatst.com/"
+    },
+
   ],
   "farLeft": [
     {
@@ -80,6 +85,22 @@
     }
   ],
   "mainstreamRight": [
+    {
+      "title": "Fox News",
+      "link": "https://www.foxnews.com/"
+    },
+    {
+      "title": "The Federalist",
+      "link": "https://www.thefederalist.com/"
+    },
+    {
+      "title": "The Weekly Standard",
+      "link": "https://www.weeklystandard.com/"
+    },
+    {
+      "title": "The National Review",
+      "link": "https://www.nationalreview.com/"
+    },
 
   ],
   "mainstreamLeft": [
@@ -118,5 +139,14 @@
       "title": "Bloomberg",
       "link": "https://www.bloomberg.com/"
     },
+    {
+      "title": "The Wall Street Journal",
+      "link": "https://www.wsj.com/"
+    },
+    {
+      "title": "Market Watch",
+      "link": "https://www.marketwatch.com/"
+    },
+
   ]
 }
